@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar" id="navbar">
+    <div class="logo">CD</div>
+  
+    <div class="nav-links">
+      <button onclick="scrollToSection('home')">home</button>
+      <button onclick="scrollToSection('about')">Projects</button>
+      <button onclick="scrollToSection('skills')">Education</button>
+      <button onclick="scrollToSection('projects')">Blog</button>
+    </div>
+  
+    <button class="resume-btn" onclick="scrollToSection('contact')">contact Me 😁</button>
+  
+    <button class="menu-toggle" id="menuToggle">
+      &#9776;
+    </button>
+  </div>
+  
+  <!-- Mobile Dropdown Menu -->
+  <div class="dropdown-menu" id="dropdownMenu">
+    <button onclick="scrollToSection('home')">home</button>
+    <button onclick="scrollToSection('about')">about</button>
+    <button onclick="scrollToSection('skills')">skills</button>
+    <button onclick="scrollToSection('projects')">projects</button>
+    <button onclick="scrollToSection('journey')">journey</button>
+    <button onclick="scrollToSection('contact')">contact</button>
+    <button class="resume-mobile" onclick="scrollToSection('contact')">Get Resume</button>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="home">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <h1>Hi, I'm <span style="color:#dc2626">CYU😂CYU</span> 👋</h1>
+        <p>Creative Full Stack Dev 🖥️ | Passionate Problem Solver 🔧</p>
+        <div class="hero-buttons">
+          <button class="primary" onclick="scrollToSection('projects')">View my Projects 👨‍💻</button>
+          <button class="secondary" onclick="scrollToSection('contact')">Let's Collaborate 🤝</button>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="./assets/images/image.png" alt="Profile Picture of Chris Doe" />
+      </div>
+    </div>
+  </section>
+  <section class="projects" id="projects">
+    <div class="container">
+      <h2 class="section-title">My Projects</h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <img src="./assets/images/image.png" alt="Project 1 Screenshot">
+          <h3>Weather App</h3>
+          <p>A real-time weather forecast app built with OpenWeather API.</p>
+          <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+          <a href="#" class="project-link">Live Demo</a>
+          <a href="#" class="project-link">GitHub</a>
+        </div>
+
+        <div class="project-card">
+          <img src="./assets/images/image.png" alt="Project 2 Screenshot">
+          <h3>Portfolio Website</h3>
+          <p>A clean and modern portfolio to showcase my skills and projects.</p>
+          <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+          <a href="#" class="project-link">Live Demo</a>
+          <a href="#" class="project-link">GitHub</a>
+        </div>
+
+        <div class="project-card">
+          <img src="./assets/images/image.png" alt="Project 3 Screenshot">
+          <h3>Motel Booking System</h3>
+          <p>Simple motel booking app that allows users to check room availability.</p>
+          <p><strong>Tech:</strong> HTML, CSS, JavaScript, PHP</p>
+          <a href="#" class="project-link">Live Demo</a>
+          <a href="#" class="project-link">GitHub</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Journey Section -->
+<section id="education-and-experience" class="journey">
+  <div class="journey-container">
+    <h4 class="journey-heading">
+      <span class="icon">🏛️</span> Education
+    </h4>
+    <!-- Education Side -->
+    <div class="journey-education">
+     
+
+      <div class="edu-timeline">
+        <!-- Entry 1 -->
+        <div class="edu-entry">
+          <p class="edu-date">Jan 2012 - Nov 2019</p>
+          <div class="edu-content">
+            <div class="edu-dot"></div>
+            <div class="edu-info">
+              <h3>
+                
+                csk / les hirondelles de don bosco
+              </h3>
+              <p class="edu-level">Primary Level</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entry 2 -->
+        <div class="edu-entry">
+          <p class="edu-date">Jan 2020 - Aug 2023</p>
+          <div class="edu-content">
+            <div class="edu-dot"></div>
+            <div class="edu-info">
+              <h3>
+                
+                Sos THS
+              </h3>
+              <p class="edu-level">Secondary Lower Level</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Entry 3 -->
+        <div class="edu-entry">
+          <p class="edu-date">Nov 2023 - Still Studying</p>
+        
+        </div>
+      </div>
+    </div>
+
+
+    
+  </div>
+</section>
+
+
+<section class="blog-section" id="blog">
+  <div class="container">
+    <h2 class="section-title">Blog Posts 📝</h2>
+    <div class="blog-grid" id="blogContainer">
+      <!-- Blog posts will be inserted here dynamically -->
+    </div>
+  </div>
+</section>
+
+
+
+<section class="contact-section">
+  <div class="contact-container">
+    <h2 class="contact-title">Contact Me</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <p>Have some big idea or brand to develop and need help?</p>
+        <ul>
+          <li><strong>Email:</strong> <a href="mailto:derry@gmail.com">derry@gmail.com</a></li>
+          <li><strong>Address:</strong> <a href="https://www.google.com/maps" target="_blank">kg 317 st, Kigali, Rwanda</a></li>
+        </ul>
+      </div>
+      <div class="contact-form">
+        <h3>Send Us a Message</h3>
+        <form>
+          <input type="text" placeholder="Your Name" name="name" required>
+          <input type="email" placeholder="Your Email" name="email" required>
+          <textarea placeholder="Your Message" name="message" rows="5" required></textarea>
+          <button type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section Styles -->
+<style>
+.contact-section {
+  background-color: #7f1d1d;
+  color: white;
+  padding: 4rem 1rem;
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.contact-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 2rem;
+}
+
+.contact-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .contact-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.contact-info,
+.contact-form {
+  background-color: #450a0a;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #b91c1c;
+}
+
+.contact-info h3,
+.contact-form h3 {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.contact-info p,
+.contact-info ul li {
+  font-size: 0.875rem;
+  color: #e5e7eb;
+  margin-top: 0.5rem;
+}
+
+.contact-info a {
+  color: #f3f4f6;
+  text-decoration: underline;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  background-color: #991b1b;
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 0.375rem;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: white;
+  box-shadow: 0 0 0 2px white;
+}
+
+.contact-form button {
+  background-color: #dc2626;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #b91c1c;
+}
+</style>
+
+  <!-- Footer -->
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <h2>CD</h2>
+      <p>Crafting Clean Code & Creative Solutions.</p>
+    </div>
+
+    
+
+    <div class="footer-socials">
+      <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+      <a href="mailto:youremail@example.com">Email</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Cyubahiro Derrick . All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+
+
+  <script src="./assets/js/script.js"></script>
+</body>
+</html>
