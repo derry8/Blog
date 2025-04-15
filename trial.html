@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Admin Panel</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+</head>
+
+<body>
+
+
+    <section class="blog-admin" id="blog-admin">
+        <div class="container">
+            <h2 class="section-header">Admin Blog Upload ✍️</h2>
+            <form id="blogForm" class="blog-form">
+                <input type="text" placeholder="image" id="blogImage">
+                <input type="text" id="blogTitle" placeholder="Blog Title" />
+                <input type="date" id="blogDate" />
+                <textarea id="blogContent" rows="6" placeholder="Blog Content"></textarea>
+                <button type="submit">Add Blog</button>
+            </form>
+            <p id="formMessage" class="form-message"></p>
+        </div>
+    </section>
+
+
+    <section class="blog-manager" id="blog-manager">
+        <div class="container">
+            <h2 class="section-header">Manage Blogs 🛠️</h2>
+            <div id="blogList" class="blog-list"></div>
+        </div>
+    </section>
+
+    <script>
+
+        document.getElementById('blogForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const image = document.getElementById('blogImage')
+            const title = document.getElementById('blogTitle').value.trim();
+            const date = document.getElementById('blogDate').value;
+            const content = document.getElementById('blogContent').value.trim();
+            const message = document.getElementById('formMessage');
+
+            if (image && title && date && content) {
+                const newPost = { image, title, date, content };
+                const existingBlogs = JSON.parse(localStorage.getItem("blogs")) || [];
+                existingBlogs.unshift(newPost); // Add new blog to the top
+                localStorage.setItem("blogs", JSON.stringify(existingBlogs));
+
+                message.textContent = "✅ Blog post added successfully!";
+                this.reset();
+
+                setTimeout(() => {
+                    message.textContent = "";
+                    renderBlogs();
+                }, 1000);
+            } else {
+                message.textContent = "⚠️ Please fill in all fields.";
+            }
+        });
+
+
+        function renderBlogs() {
+            const blogList = document.getElementById("blogList");
+            const blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+
+            blogList.innerHTML = "";
+
+            blogs.forEach((blog, index) => {
+                const blogItem = document.createElement("div");
+                blogItem.classList.add("blog-card");
+
+                blogItem.innerHTML = `
+          <div class="blog-title">${blog.title}</div>
+          
+         <div class="blog-date">${blog.date}</div>
+         
+         <div class="blog-description">
+                     ${blog.content.slice(0, 100)}...
+                    </div>
+          <div class="blog-actions">
+            <button class="edit-btn" onclick="editBlog(${index})">Edit</button>
+            <button class="delete-btn" onclick="deleteBlog(${index})">Delete</button>
+          </div>
+        `;
+
+                blogList.appendChild(blogItem);
+            });
+        }
+
+
+        function deleteBlog(index) {
+            const blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+            if (confirm("Are you sure you want to delete this blog post?")) {
+                blogs.splice(index, 1);
+                localStorage.setItem("blogs", JSON.stringify(blogs));
+                renderBlogs();
+            }
+        }
+
+
+        function editBlog(index) {
+            const blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+            const blog = blogs[index];
+
+            document.getElementById("blogTitle").value = blog.title;
+            document.getElementById("blogDate").value = blog.date;
+            document.getElementById("blogContent").value = blog.content;
+
+            blogs.splice(index, 1);
+            localStorage.setItem("blogs", JSON.stringify(blogs));
+            renderBlogs();
+
+            document.getElementById("blog-admin").scrollIntoView({ behavior: "smooth" });
+        }
+
+
+        renderBlogs();
+    </script>
+</body>
+
+</html>

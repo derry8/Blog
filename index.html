@@ -1,0 +1,228 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/styles/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Neuton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Monomaniac+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Niramit&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="logo">CD</div>
+
+        <div class="right-section">
+            <nav class="nav-links" id="navLinks">
+                <a href="#home"><span>01.</span> Home</a>
+                <a href="#projects"><span>02.</span> Projects</a>
+                <a href="#education"><span>03.</span> Education</a>
+                <a href="#blog"><span>04.</span> Blog</a>
+            </nav>
+            <a href="#contact" class="contact-button">contact Me 😄</a>
+            <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        </div>
+    </header>
+    <section class="hero">
+        <p class="intro">Hi, my name is</p>
+        <h1 class="name">CYUBAHIRO DERRICK</h1>
+        <h2 class="title">I Build Things For The Web</h2>
+        <p class="description">
+            A Frontend focused web Developer building the frontend of websites<br />
+            and web applications that leads to the success of the overall <br> product
+        </p>
+        <br>
+        <div class="buttons">
+            <a href="#projects" class="btn">View My Projects</a>
+            <a href="#contact" class="btn">Collaborate With Me</a>
+        </div>
+    </section>
+    <div class="section-heading">
+        <span class="section-number">02.</span>
+        <span class="section-title">Projects</span>
+        <div class="section-line"></div>
+    </div>
+    <section class="project">
+        <div class="project-card">
+            <div class="project-title">Spotify - clone ui</div>
+            <div class="project-description">
+                Created UI clone of Spotify's home & search page using React, Tailwind CSS, Spotify API, TypeScript, and
+                Redux.
+            </div>
+            <div class="tags">
+                <div class="tag">TYPESCRIPT</div>
+                <div class="tag">TYPESCRIPT</div>
+                <div class="tag">TYPESCRIPT</div>
+            </div>
+            <div class="buttons">
+                <a href="#" class="btn">Demo</a>
+                <a href="#" class="btn">Source Code</a>
+            </div>
+        </div>
+    </section>
+    <div class="section-heading">
+        <span class="section-number">03.</span>
+        <span class="section-title">Education</span>
+        <div class="section-line"></div>
+    </div>
+    <section id="education-and-experience" class="journey">
+        <div class="journey-container">
+            <h4 class="journey-heading">
+                <span class="icon">🏛️</span> Education
+            </h4>
+
+            <div class="journey-education">
+
+
+                <div class="edu-timeline">
+
+                    <div class="edu-entry">
+                        <p class="edu-date">Jan 2012 - Nov 2019</p>
+                        <div class="edu-content">
+                            <div class="edu-dot"></div>
+                            <div class="edu-info">
+                                <h3>
+
+                                    csk / les hirondelles de don bosco
+                                </h3>
+                                <p class="edu-level">Primary Level</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="edu-entry">
+                        <p class="edu-date">Jan 2020 - Aug 2023</p>
+                        <div class="edu-content">
+                            <div class="edu-dot"></div>
+                            <div class="edu-info">
+                                <h3>
+
+                                    Sos THS
+                                </h3>
+                                <p class="edu-level">Secondary Lower Level</p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="edu-entry">
+                        <p class="edu-date">Nov 2023 - Still Studying</p>
+
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+    <div class="section-heading">
+        <span class="section-number">04.</span>
+        <span class="section-title">Blog</span>
+        <div class="section-line"></div>
+    </div>
+    <section class="blog-section" id="blog">
+        <div class="container">
+          <div class="blog-grid" id="blogContainer">
+            <!-- Blog cards will be injected here -->
+          </div>
+        </div>
+      </section>
+      
+    <div class="section-heading">
+        <span class="section-number">05.</span>
+        <span class="section-title">contact</span>
+        <div class="section-line"></div>
+    </div>
+    <section class="contact-section">
+        <div class="contact-container">
+          
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <span>Contact Information</span>
+                    <p>Have some big idea or brand to develop and need help?</p>
+                    <ul>
+                        <li> derry@gmail.com</li>
+                        <li> kg 317 st,
+                                Kigali,
+                                Rwanda</li>
+                    </ul>
+                </div>
+                <div class="contact-form">
+                    <p>Send Us a Message</p>
+                    <form>
+                        <input type="text" placeholder="Your Name" name="name" required>
+                        <input type="email" placeholder="Your Email" name="email" required>
+                        <textarea placeholder="Your Message" name="message" rows="5" required></textarea>
+                        <button type="submit">Send</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="logo" style="width: 55px; margin-bottom: 20px; text-align: center;">CD</div>
+
+                <p>Crafting Clean Code & Creative Solutions.</p>
+            </div>
+
+
+
+            <div class="footer-socials" style="margin-top: 80px;">
+                <a href="https://github.com/yourusername" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+                <a href="mailto:youremail@example.com">Email</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; <span id="year"></span> Cyubahiro Derrick . All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('navLinks');
+            nav.classList.toggle('active');
+        }
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        function renderBlogs() {
+    const blogContainer = document.getElementById("blogContainer");
+    blogContainer.innerHTML = ""; // Clear previous content
+
+    const blogs = JSON.parse(localStorage.getItem("blogs")) || [];
+
+    blogs.forEach((blog) => {
+      const card = document.createElement("div");
+      card.classList.add("blog-card");
+
+      card.innerHTML = `
+        <div class="blog-title">${blog.title}</div>
+        <div class="blog-date">${new Date(blog.date).toDateString()}</div>
+        <div class="blog-description">
+          ${blog.content.length > 100 ? blog.content.slice(0, 100) + "..." : blog.content}
+        </div>
+        <a href="#" class="btn">View More</a>
+      `;
+
+      blogContainer.appendChild(card);
+    });
+  }
+
+  // Call the function on page load
+  window.addEventListener("DOMContentLoaded", renderBlogs);
+    </script>
+</body>
+
+</html>
